@@ -19,9 +19,11 @@ public class PlayerNetworkMover : Photon.MonoBehaviour
 
     void Start()
     {
-        if (photonView.isMine)
+       
+       if (photonView.isMine)
         {
             GetComponent<BoxCollider2D>().enabled = true;
+           
         }
         else
         {
