@@ -17,13 +17,12 @@ public class PlayerNetworkMover : Photon.MonoBehaviour
         doubleClick = GetComponent<DoubleClick>();
     }
 
-    void Start()
+    void Update()//start から変更
     {
        
        if (photonView.isMine)
         {
             GetComponent<BoxCollider2D>().enabled = true;
-           
         }
         else
         {
