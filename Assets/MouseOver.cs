@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MouseOver : Photon.MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
         CardFlipper flipper;
         CardModel cardModel;
@@ -25,7 +25,7 @@ public class MouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     // オブジェクトの範囲内にマウスポインタが入った際に呼び出されます。
     public void OnPointerEnter(PointerEventData eventData)
         {
-            if(rankGetButton.ToggleMouseOver())
+            if(photonView.isMine)
             {
                  cardModel.ToggleFace(true);
             //カードの表面を表示する
@@ -35,7 +35,7 @@ public class MouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         // オブジェクトの範囲内からマウスポインタが出た際に呼び出されます。
         public void OnPointerExit(PointerEventData eventData)
         {
-        if (rankGetButton.ToggleMouseOver())
+        if (photonView.isMine)
             {
                  flipper.FlipCard(cardModel.faces[cardModel.cardIndex], cardModel.cardBack, -1);
             //カードを裏返すアニメーション処理の呼出

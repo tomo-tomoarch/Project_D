@@ -33,7 +33,7 @@ public class PlayerNetworkMover : Photon.MonoBehaviour
     {
         while (true)
         {
-            transform.position = Vector3.Lerp(transform.position, position, Time.deltaTime * smoothing);
+            //transform.position = Vector3.Lerp(transform.position, position, Time.deltaTime * smoothing);
             yield return null;
         }
     }
@@ -42,14 +42,14 @@ public class PlayerNetworkMover : Photon.MonoBehaviour
 
         if (stream.isWriting)
         {
-            stream.SendNext(transform.position);　//現在のポジションを送る
+            //stream.SendNext(transform.position);　//現在のポジションを送る
             stream.SendNext(card.cardIndex);　//cardIndexの情報を送る
             stream.SendNext(doubleClick.clickNum);　//クリックされた回数を送る
         }
         else
        {
            CardModel cardModel = GetComponent<CardModel>();　//受信先のCardModelを取得
-           position = (Vector3)stream.ReceiveNext();　//現在のポジションを受信
+          // position = (Vector3)stream.ReceiveNext();　//現在のポジションを受信
             cardModel.cardIndex = (int)stream.ReceiveNext(); //cardIndexの情報を受信
             clickedNum = (int)stream.ReceiveNext(); //クリックされた回数を受信
 
