@@ -8,8 +8,10 @@ public class PlayerNetworkMover : Photon.MonoBehaviour
     DoubleClick doubleClick;
 
     Vector3 position;
-    int clickedNum;
+    public int clickedNum;
     float smoothing = 1f;
+    private int i = 0;
+
 
     void Awake()
     {
@@ -53,14 +55,13 @@ public class PlayerNetworkMover : Photon.MonoBehaviour
             cardModel.cardIndex = (int)stream.ReceiveNext(); //cardIndexの情報を受信
             clickedNum = (int)stream.ReceiveNext(); //クリックされた回数を受信
 
-            if (clickedNum >= 2) //クリックされた回数が2回だった場合
+            if (clickedNum % 2 == 1) 
             {
-               cardModel.ToggleFace(true);　//表をレンダー
-           }
-            else
-           {
-               cardModel.ToggleFace(false); //裏をレンダー
-            }
+                cardModel.ToggleFace(true); //表をレンダー
+            }else
+            {
+                cardModel.ToggleFace(false); //裏をレンダー
+            }                                 
        }
     }
 }

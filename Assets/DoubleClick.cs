@@ -7,6 +7,7 @@ public class DoubleClick : Photon.MonoBehaviour, IPointerClickHandler
 {
     CardModel cardmodel;
     public int clickNum = 0; //外部参照用のクリック数の宣言
+    private int i = 0;
 
     void Awake()
     {
@@ -19,12 +20,22 @@ public class DoubleClick : Photon.MonoBehaviour, IPointerClickHandler
         {
             if (eventData.clickCount > 1)
             {
-                Debug.Log(eventData.clickCount);
-                clickNum = eventData.clickCount;
-                cardmodel.ToggleFace(true);
-                //下記のこの文を追加しました
-                GetComponent<MouseOver>().enabled = false;
-                //外部参照用のクリック数（PlayerNetwrokMoverで取得する）
+                i++;
+                if(i % 2 == 1)
+                {
+                    Debug.Log(eventData.clickCount);
+                    clickNum = i; //外部参照用のクリック数（PlayerNetwrokMoverで取得する）
+                    cardmodel.ToggleFace(true);
+                    GetComponent<MouseOver>().enabled = false;
+                }
+                else
+                {
+                    Debug.Log(eventData.clickCount);
+                    clickNum = i; //外部参照用のクリック数（PlayerNetwrokMoverで取得する）
+                    cardmodel.ToggleFace(false);
+                    GetComponent<MouseOver>().enabled = true;
+                }
+                              
             }
         }
     }

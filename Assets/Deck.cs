@@ -26,8 +26,8 @@ public class Deck : MonoBehaviour {
             cards.Clear();　//cardsを空にする。
         }
 
-        for (int i = 0; i < 18; i++)
-        //初期値i=0から18以下の場合下記を繰り返しiをインクリメント。
+        for (int i = 0; i < 15; i++)
+        //初期値i=0から15以下の場合下記を繰り返しiをインクリメント。
         {
             cards.Add(i);　//リストにiを加える。
         }

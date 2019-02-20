@@ -6,6 +6,7 @@ using UnityEngine.UI; //text 使うので
 public class NetworkManager : MonoBehaviour {
 
     Deck deck; //Deckクラスを参照します
+    Deck2 deck2;
    // ChipCalculator chipCalculator;
 
     [SerializeField] Text connectionText;
@@ -29,6 +30,7 @@ public class NetworkManager : MonoBehaviour {
 
         //deck = GetComponent<Deck>(); //Deck.csの取得
         deck = GameObject.Find("Deck").GetComponent<Deck>();
+        deck2 = GameObject.Find("Deck2").GetComponent<Deck2>();
     }
 
     void Update()
@@ -48,7 +50,7 @@ public class NetworkManager : MonoBehaviour {
     {
         if (PhotonNetwork.playerList.Length == 1)
         {
-           // chipCalculator.ChipShow(13000, 1);
+            // chipCalculator.ChipShow(13000, 1);
 
             int index = 0;
             int cardCount = 0;　//内部で使う値cardCountの宣言
@@ -56,7 +58,7 @@ public class NetworkManager : MonoBehaviour {
 
             foreach (int i in deck.GetCards())
             {
-                if (cardCount < 18)
+                if (cardCount < 15)
                 {
                     float co = cardOffset * cardCount; //オフセット幅の計算
                     Vector3 temp = startfirst + new Vector3(-co, 0f);
@@ -71,41 +73,67 @@ public class NetworkManager : MonoBehaviour {
                     //表面をレンダー（カードゲームを作りたい第2回目で作成したスクリプトを使用）
 
                     cardCount++; //cardCountをインクリメント
-                } else if(cardCount < 26)
+                }
+                else if (cardCount < 26)
                 {
                     var properties = new ExitGames.Client.Photon.Hashtable();
-                        string card = "card" + cardCount;
-                        properties.Add(card, i);
-                        PhotonNetwork.room.SetCustomProperties(properties);
+                    string card = "card" + cardCount;
+                    properties.Add(card, i);
+                    PhotonNetwork.room.SetCustomProperties(properties);
                     cardCount++;
                 }
                 else
                 {
                     break;
                 }
-               
+
             }
-              
+
         }
         else
         {
-            // chipCalculator.ChipShow(13000, -1);
-            /*
-                        for (int i = 13; i < 26; i++)
-                        {
-                            float co = cardOffset * i; //オフセット幅の計算
-                            Vector3 temp = startsecond + new Vector3(-co, 0f);//tempというオフセットした位置の計算
-                            GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("card", temp, Quaternion.identity, 0);
-                            CardModel cardModel = cardCopy.GetComponent<CardModel>();  // Cardmodel を使用、
+            int index = 0;
+            int cardCount = 0; //内部で使う値cardCountの宣言
 
-                            string card = "card" + i;
-                            int indexnumber = (int)PhotonNetwork.room.customProperties[card];
-                            cardModel.cardIndex = indexnumber; //Cardmodel.csのcardIndex に　要素の値を渡す
-                            cardModel.ToggleFace(true);  //　表面レンダーする
-                        }
-            */
-        }
+            foreach (int i in deck2.GetCards())
+            {
+                if (cardCount < 13)
+                {
+                    float co = cardOffset * cardCount; //オフセット幅の計算
+                    Vector3 temp = startfirst + new Vector3(-co, 2f);
+                    //tempというオフセットした位置の計算
+                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("Card2", temp, spawnPoints[index].rotation, 0);
+                    //カードプレファブのコピー
 
+                    CardModel cardModel = cardCopy.GetComponent<CardModel>();
+                    //コピーしたカードプレファブのCardModelクラスを取得
+                    cardModel.cardIndex = i;//インデックスにiを代入
+                    cardModel.ToggleFace(false);
+                    //表面をレンダー（カードゲームを作りたい第2回目で作成したスクリプトを使用）
+
+                    cardCount++; //cardCountをインクリメント
+
+
+
+
+                    // chipCalculator.ChipShow(13000, -1);
+                    /*
+                                for (int i = 13; i < 26; i++)
+                                {
+                                    float co = cardOffset * i; //オフセット幅の計算
+                                    Vector3 temp = startsecond + new Vector3(-co, 0f);//tempというオフセットした位置の計算
+                                    GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("card", temp, Quaternion.identity, 0);
+                                    CardModel cardModel = cardCopy.GetComponent<CardModel>();  // Cardmodel を使用、
+
+                                    string card = "card" + i;
+                                    int indexnumber = (int)PhotonNetwork.room.customProperties[card];
+                                    cardModel.cardIndex = indexnumber; //Cardmodel.csのcardIndex に　要素の値を渡す
+                                    cardModel.ToggleFace(true);  //　表面レンダーする
+                                }
+                    */
+                }
+            }
+        } 
     }
 
 }
