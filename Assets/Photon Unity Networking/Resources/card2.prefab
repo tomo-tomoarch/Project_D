@@ -102,20 +102,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faces:
-  - {fileID: 21300046, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  - {fileID: 21300048, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
-  cardBack: {fileID: 21300118, guid: cb8d53796e7b97940b58a736cb97a8c8, type: 3}
+  - {fileID: 21300036, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  - {fileID: 21300038, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  cardBack: {fileID: 21300034, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
+  cardBack2: {fileID: 21300034, guid: 45cc665f40df32f48b272474144e7c4d, type: 3}
   cardIndex: 0
 --- !u!114 &8737523759576916366
 MonoBehaviour:
@@ -159,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faces: []
   cardBack: {fileID: 0}
+  cardBack2: {fileID: 0}
   cardIndex: 0
 --- !u!114 &4506682899257077814
 MonoBehaviour:
@@ -172,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e577df3e3884d49418105d215937afcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickedNum: 0
 --- !u!114 &2644594187487978588
 MonoBehaviour:
   m_ObjectHideFlags: 0
