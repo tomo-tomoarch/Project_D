@@ -56,12 +56,15 @@ public class NetworkManager : MonoBehaviour {
             int cardCount = 0;　//内部で使う値cardCountの宣言
             deck.Shuffle();
 
+            Vector3 temp3 = new Vector3(0.031f, -4.137f, 0);
+            GameObject hideBar = (GameObject)PhotonNetwork.Instantiate("hide_bar", temp3, spawnPoints[index].rotation, 0);
+
             foreach (int i in deck.GetCards())
             {
                 if (cardCount < 15)
                 {
                     float co = cardOffset * cardCount; //オフセット幅の計算
-                    Vector3 temp = startfirst + new Vector3(-co, 0f);
+                    Vector3 temp = startfirst + new Vector3(7f -co, -4f);
                     //tempというオフセットした位置の計算
                     GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("Card", temp, spawnPoints[index].rotation, 0);
                     //カードプレファブのコピー
@@ -94,13 +97,17 @@ public class NetworkManager : MonoBehaviour {
         {
             int index = 0;
             int cardCount = 0; //内部で使う値cardCountの宣言
+            Vector3 temp2 = new Vector3(-6.61f, 3.18f, 0);
+
+            GameObject hideCorner = (GameObject)PhotonNetwork.Instantiate("hide_coner", temp2, spawnPoints[index].rotation, 0);
 
             foreach (int i in deck2.GetCards())
             {
                 if (cardCount < 13)
-                {
+                {                 
+
                     float co = cardOffset * cardCount; //オフセット幅の計算
-                    Vector3 temp = startfirst + new Vector3(-co, 2f);
+                    Vector3 temp = startfirst + new Vector3(-5.6f -co/6, 4.3f - co /8);
                     //tempというオフセットした位置の計算
                     GameObject cardCopy = (GameObject)PhotonNetwork.Instantiate("Card2", temp, spawnPoints[index].rotation, 0);
                     //カードプレファブのコピー
