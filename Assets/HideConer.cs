@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HideConer : MonoBehaviour
+public class HideConer : MonoBehaviour 
 {
   
     // Start is called before the first frame update

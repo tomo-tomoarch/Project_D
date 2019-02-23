@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 5099439233758448836}
   m_Layer: 10
   m_Name: card2
-  m_TagString: Untagged
+  m_TagString: Hostage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
