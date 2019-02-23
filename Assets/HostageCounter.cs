@@ -41,9 +41,9 @@ public class HostageCounter : MonoBehaviour
             CardModel cardModel = other.GetComponent<CardModel>(); //ぶつかった相手のCardModel.csにアクセス
             CardKind = cardModel.cardIndex;
             PhotonNetwork.Destroy(other.gameObject);
-            if(CardKind == 0 || CardKind == 1  || CardKind == 2 || CardKind == 3)
+            if (CardKind == 0 || CardKind == 1 || CardKind == 2 || CardKind == 3)
             {
-                Vector3 temp = new Vector3(-5.4f + 1f * 13*CardKind/12, -2.06f);
+                Vector3 temp = new Vector3(-5.4f + 1f * 13 * CardKind / 12, -2.06f);
                 GameObject dummy = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
 
                 Vector3 temp2 = new Vector3(-4.3f + 1f * 13 * CardKind / 12, 4.14f);
@@ -53,30 +53,39 @@ public class HostageCounter : MonoBehaviour
             else if (CardKind == 4 || CardKind == 5 || CardKind == 6 || CardKind == 7)
             {
                 Vector3 temp = new Vector3(-5.4f + 1f * 13 * CardKind / 12, -2.06f);
-                GameObject dummy = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
+                GameObject money = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
 
                 Vector3 temp2 = new Vector3(-4.3f + 1f * 13 * CardKind / 12, 4.14f);
                 GameObject money2 = (GameObject)PhotonNetwork.Instantiate("money", temp2, Quaternion.identity, 0);
             }
             else if (CardKind == 8 || CardKind == 9)
             {
-                Vector3 temp = new Vector3(-3.5f + 1f * CardKind, 2.1f);
-                GameObject dummy = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
+                Vector3 temp = new Vector3(-5.4f + 1f * 13 * CardKind / 12, -2.06f);
+                GameObject parashute = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
+
+                Vector3 temp2 = new Vector3(-4.3f + 1f * 13 * CardKind / 12, 4.14f);
+                GameObject parashute2 = (GameObject)PhotonNetwork.Instantiate("parashute", temp2, Quaternion.identity, 0);
             }
             else if (CardKind == 10 || CardKind == 11)
             {
-                Vector3 temp = new Vector3(-3.5f + 1f * CardKind, 2.1f);
-                GameObject dummy = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
+                Vector3 temp = new Vector3(-5.4f + 1f * 13 * (CardKind - 12) / 12, -2.06f);
+                GameObject gun = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
+
             }
             else if (CardKind == 12 || CardKind == 13)
             {
-                Vector3 temp = new Vector3(-3.5f + 1f * CardKind, 2.1f);
-                GameObject dummy = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
+                Vector3 temp = new Vector3(-5.4f + 1f * 13 * (CardKind-2) / 12, -2.06f);
+                GameObject Fparashute = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
+
+                Vector3 temp2 = new Vector3(-4.3f + 1f * 13 * (CardKind-2) / 12, 4.14f);
+                GameObject fparashute2 = (GameObject)PhotonNetwork.Instantiate("fparashute", temp2, Quaternion.identity, 0);
+
             }
             else
             {
-                Vector3 temp = new Vector3(-3.5f + 1f * CardKind, 2.1f);
-                GameObject dummy = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
+                Vector3 temp = new Vector3(-5.4f + 1f * 13 * (CardKind - 2) / 12, -2.06f);
+                GameObject fgun = (GameObject)PhotonNetwork.Instantiate("used", temp, Quaternion.identity, 0);
+
             }
         }
     }
