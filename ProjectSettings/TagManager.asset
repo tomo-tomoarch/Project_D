@@ -8,6 +8,7 @@ TagManager:
   - HostageWindow
   - MiddleZone
   - tradable
+  - Bag
   layers:
   - Default
   - TransparentFX
@@ -47,6 +48,9 @@ TagManager:
     locked: 0
   - name: background
     uniqueID: 3692296253
+    locked: 0
+  - name: transparent
+    uniqueID: 3546124405
     locked: 0
   - name: cards
     uniqueID: 1723649063

@@ -25,7 +25,7 @@ public class MouseOver : Photon.MonoBehaviour, IPointerEnterHandler, IPointerExi
     // オブジェクトの範囲内にマウスポインタが入った際に呼び出されます。
     public void OnPointerEnter(PointerEventData eventData)
         {
-            if(photonView.isMine)
+            if(photonView.isMine && this.GetComponent<PhotonView>().ownerId == 1)
             {
                  cardModel.ToggleFace(true);
             //カードの表面を表示する
@@ -35,7 +35,7 @@ public class MouseOver : Photon.MonoBehaviour, IPointerEnterHandler, IPointerExi
         // オブジェクトの範囲内からマウスポインタが出た際に呼び出されます。
         public void OnPointerExit(PointerEventData eventData)
         {
-        if (photonView.isMine)
+        if (photonView.isMine && this.GetComponent<PhotonView>().ownerId == 1)
             {
                  flipper.FlipCard(cardModel.faces[cardModel.cardIndex], cardModel.cardBack, -1);
             //カードを裏返すアニメーション処理の呼出

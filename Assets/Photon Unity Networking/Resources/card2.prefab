@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: 8737523759576916366}
   - component: {fileID: 2609185731530296287}
   - component: {fileID: 4506682899257077814}
-  - component: {fileID: 2644594187487978588}
   - component: {fileID: 651517100987300942}
   - component: {fileID: 5052967633156082065}
   - component: {fileID: 4556757569000084408}
   - component: {fileID: 8650431264181388278}
   - component: {fileID: 5099439233758448836}
+  - component: {fileID: 8896051161154006782}
   m_Layer: 10
   m_Name: card2
   m_TagString: Hostage
@@ -175,18 +175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickedNum: 0
---- !u!114 &2644594187487978588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6459006053500656097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 762f21e3f0bc9264a96794bb0369d6de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &651517100987300942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,3 +293,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.3888888}
   m_EdgeRadius: 0
+--- !u!114 &8896051161154006782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459006053500656097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05466543e95af8b4d87844aec3a22816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

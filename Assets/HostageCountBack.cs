@@ -12,8 +12,8 @@ public class HostageCountBack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("tradable"))  // 壁にぶつかったら
-        {
+        if (other.gameObject.CompareTag("tradable") && other.GetComponent<PhotonView>().isMine == true)  // 壁にぶつかったら
+            {
             other.gameObject.tag = "Hostage";
             Debug.Log("atattayo");
             tagHostage = GameObject.FindGameObjectsWithTag("Hostage");
